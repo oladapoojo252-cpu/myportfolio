@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-24 px-6 border-t border-white/10">
+    <section id="about" className="py-24 px-6 border-t border-zinc-800/80">
       <div className="max-w-5xl mx-auto space-y-12">
         
         {/* Section Header */}
@@ -14,7 +14,7 @@ export default function AboutSection() {
             About Me
           </h2>
           <p className="text-zinc-400 text-base">
-            Software engineer based in Kwara, Nigeria &mdash; dedicated to clean code, performance, and intentional design.
+            Software engineer dedicated to clean architecture, high performance, and building intuitive digital products.
           </p>
         </div>
 
@@ -33,12 +33,12 @@ export default function AboutSection() {
               </p>
 
               <p>
-                Living and working from Kwara, Nigeria, I build for global scale. Every interaction, sub-second response time, and edge case matters. My goal is always to deliver products that are reliable, maintainable, and a genuine pleasure to use.
+                I focus on building for scale, reliability, and long-term maintainability. Every interaction, sub-second response time, and edge case matters. My goal is always to deliver products that are robust under the hood and a genuine pleasure to use.
               </p>
             </div>
 
             {/* Technical Stack Box */}
-            <div className="bg-zinc-900/50 border border-white/10 p-6 rounded-2xl space-y-5">
+            <div className="bg-[#0b0b0d] border border-zinc-800 p-6 rounded-2xl space-y-5">
               <h3 className="text-lg font-bold text-white">Technical Stack & Tools</h3>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-mono">
@@ -72,9 +72,9 @@ export default function AboutSection() {
           {/* Right Side: Structured Editorial Photo Story */}
           <div className="md:col-span-5 space-y-6">
             
-            {/* Photo 1: Architectural Tree Portrait */}
-            <div className="bg-[#0e0e11] border border-white/10 rounded-2xl overflow-hidden p-3 space-y-3 shadow-xl">
-              <div className="relative aspect-[4/5] w-full rounded-xl overflow-hidden bg-zinc-900">
+            {/* Photo 1: Focus & Craft */}
+            <div className="border border-zinc-800 bg-[#0b0b0d] rounded-2xl overflow-hidden shadow-xl group">
+              <div className="relative aspect-[4/5] w-full bg-zinc-950 overflow-hidden">
                 <Image
                   src="/images/oladapo-tree.jpg"
                   alt="Ojo Oladapo"
@@ -83,19 +83,19 @@ export default function AboutSection() {
                   className="object-cover object-center filter grayscale hover:grayscale-0 transition-all duration-500"
                 />
               </div>
-              <div className="px-1 py-0.5">
-                <div className="text-[11px] font-mono text-zinc-500 uppercase tracking-wider">
+              <div className="p-4 border-t border-zinc-800/80 bg-[#0b0b0d]">
+                <div className="text-[11px] font-mono text-zinc-400 uppercase tracking-wider font-semibold">
                   Focus & Craft
                 </div>
-                <p className="text-xs text-zinc-400 mt-0.5">
-                  Grounded in Kwara, building systems with patience and architectural intent.
+                <p className="text-xs text-zinc-500 mt-1">
+                  Building resilient systems with patience, deep focus, and architectural intent.
                 </p>
               </div>
             </div>
 
-            {/* Photo 2: Car Portrait smiling */}
-            <div className="bg-[#0e0e11] border border-white/10 rounded-2xl overflow-hidden p-3 space-y-3 shadow-xl">
-              <div className="relative aspect-[4/5] w-full rounded-xl overflow-hidden bg-zinc-900">
+            {/* Photo 2: Drive & Perspective */}
+            <div className="border border-zinc-800 bg-[#0b0b0d] rounded-2xl overflow-hidden shadow-xl group">
+              <div className="relative aspect-[4/5] w-full bg-zinc-950 overflow-hidden">
                 <Image
                   src="/images/oladapo-car.jpg"
                   alt="Ojo Oladapo"
@@ -104,11 +104,11 @@ export default function AboutSection() {
                   className="object-cover object-center filter grayscale hover:grayscale-0 transition-all duration-500"
                 />
               </div>
-              <div className="px-1 py-0.5">
-                <div className="text-[11px] font-mono text-zinc-500 uppercase tracking-wider">
+              <div className="p-4 border-t border-zinc-800/80 bg-[#0b0b0d]">
+                <div className="text-[11px] font-mono text-zinc-400 uppercase tracking-wider font-semibold">
                   Drive & Perspective
                 </div>
-                <p className="text-xs text-zinc-400 mt-0.5">
+                <p className="text-xs text-zinc-500 mt-1">
                   Relentless improvement, curiosity, and genuine human connection.
                 </p>
               </div>

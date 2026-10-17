@@ -14,14 +14,14 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-24 px-6 border-t border-white/10 text-center">
+    <section id="contact" className="py-24 px-6 border-t border-zinc-800/80 text-center">
       <div className="max-w-3xl mx-auto space-y-8">
         <div>
           <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-white mb-4">
             Let&apos;s Connect
           </h2>
           <p className="text-zinc-400 text-lg">
-            Based in Kwara, Nigeria &mdash; open for software engineering opportunities and projects worldwide.
+            Open for software engineering opportunities, product builds, and technical collaboration worldwide.
           </p>
         </div>
 
@@ -31,7 +31,7 @@ export default function ContactSection() {
             href="https://wa.me/+2349021789494"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-7 py-3.5 bg-white text-black font-semibold rounded-full hover:bg-zinc-200 transition-all text-sm"
+            className="inline-flex items-center gap-2 px-7 py-3 bg-white text-black font-semibold rounded-full hover:bg-zinc-200 transition-all text-sm"
           >
             <WhatsAppIcon className="w-4 h-4 text-emerald-600" />
             <span>Chat on WhatsApp</span>
@@ -39,7 +39,7 @@ export default function ContactSection() {
 
           <button
             onClick={handleCopyEmail}
-            className="inline-flex items-center gap-2 px-7 py-3.5 bg-zinc-900 text-white font-medium rounded-full border border-white/15 hover:bg-zinc-800 transition-all text-sm"
+            className="inline-flex items-center gap-2 px-7 py-3 bg-zinc-900 text-white font-medium rounded-full border border-zinc-700 hover:bg-zinc-800 transition-all text-sm"
           >
             {copied ? (
               <>
@@ -53,7 +53,7 @@ export default function ContactSection() {
         </div>
 
         {/* Social Channels Strip */}
-        <div className="pt-6 border-t border-white/10 flex items-center justify-center gap-8 text-sm text-zinc-400">
+        <div className="pt-6 border-t border-zinc-800/80 flex items-center justify-center gap-8 text-sm text-zinc-400">
           <a
             href="https://x.com/Oladapothefirst"
             target="_blank"
@@ -87,7 +87,7 @@ export default function ContactSection() {
 
         {/* Footer */}
         <div className="pt-8 text-xs font-mono text-zinc-600">
-          Ojo Oladapo &bull; Kwara, Nigeria
+          Ojo Oladapo &bull; Software Engineer
         </div>
       </div>
     </section>

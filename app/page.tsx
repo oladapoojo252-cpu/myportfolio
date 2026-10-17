@@ -104,7 +104,7 @@ export default function Home() {
         <Hero />
 
         {/* Projects Section */}
-        <section id="projects" className="py-24 px-6 border-t border-white/10">
+        <section id="projects" className="py-24 px-6 border-t border-zinc-800/80">
           <div className="mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white mb-3">
               Featured Projects

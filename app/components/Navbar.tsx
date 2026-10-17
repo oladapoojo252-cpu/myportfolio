@@ -3,7 +3,7 @@ import { GithubIcon, XIcon, InstagramIcon } from "./Icons";
 
 export default function Navbar() {
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-black/75 backdrop-blur-md">
+    <nav className="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800/80 bg-black/85 backdrop-blur-md">
       <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
         <Link href="#home" className="text-xl font-bold tracking-tight text-white hover:text-zinc-300 transition-colors">
           OJO.
