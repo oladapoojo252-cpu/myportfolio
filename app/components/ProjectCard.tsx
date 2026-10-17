@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import { ExternalLinkIcon, GithubIcon } from "./Icons";
+import { ExternalLinkIcon, GithubIcon, DownloadIcon } from "./Icons";
 
 export interface ProjectItem {
   id: string;
@@ -10,6 +10,7 @@ export interface ProjectItem {
   domain: string;
   link: string;
   githubUrl?: string;
+  apkUrl?: string;
   snapshotUrl: string;
   type: "web" | "mobile";
   description: string;
@@ -18,15 +19,18 @@ export interface ProjectItem {
 }
 
 export default function ProjectCard({ project }: { project: ProjectItem }) {
+  const isApk = Boolean(project.apkUrl);
+
   return (
     <div className="group bg-[#0b0b0d] border border-zinc-800 hover:border-zinc-700 rounded-2xl overflow-hidden transition-all duration-300 flex flex-col justify-between shadow-lg">
       
       {/* VERCEL-STYLE SNAPSHOT PREVIEW WINDOW */}
       <a
-        href={project.link}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label={`Open ${project.title} (${project.domain}) in a new tab`}
+        href={isApk ? project.apkUrl : project.link}
+        download={isApk ? "Daps-Browser.apk" : undefined}
+        target={isApk ? undefined : "_blank"}
+        rel={isApk ? undefined : "noopener noreferrer"}
+        aria-label={isApk ? `Download ${project.title} APK` : `Open ${project.title} (${project.domain}) in a new tab`}
         className="block bg-zinc-950 border-b border-zinc-800 cursor-pointer group/preview"
       >
         {/* Top Minimal Chrome Bar */}
@@ -39,10 +43,14 @@ export default function ProjectCard({ project }: { project: ProjectItem }) {
             </span>
           </div>
 
-          {/* Visit Trigger */}
+          {/* Action Trigger */}
           <div className="flex items-center gap-1.5 text-[11px] font-mono text-zinc-400 group-hover/preview:text-white transition-colors shrink-0">
-            <span>Visit</span>
-            <ExternalLinkIcon className="w-3.5 h-3.5" />
+            <span>{isApk ? "Download APK" : "Visit"}</span>
+            {isApk ? (
+              <DownloadIcon className="w-3.5 h-3.5 text-emerald-400" />
+            ) : (
+              <ExternalLinkIcon className="w-3.5 h-3.5" />
+            )}
           </div>
         </div>
 
@@ -59,8 +67,12 @@ export default function ProjectCard({ project }: { project: ProjectItem }) {
           {/* Clean Hover Overlay */}
           <div className="absolute inset-0 bg-black/40 opacity-0 group-hover/preview:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
             <span className="px-4 py-2 rounded-full bg-white text-black font-semibold text-xs tracking-wider uppercase flex items-center gap-1.5 shadow-2xl">
-              <span>Open Site</span>
-              <ExternalLinkIcon className="w-3.5 h-3.5" />
+              <span>{isApk ? "Download APK" : "Open Site"}</span>
+              {isApk ? (
+                <DownloadIcon className="w-3.5 h-3.5" />
+              ) : (
+                <ExternalLinkIcon className="w-3.5 h-3.5" />
+              )}
             </span>
           </div>
         </div>
@@ -104,7 +116,7 @@ export default function ProjectCard({ project }: { project: ProjectItem }) {
           </div>
         </div>
 
-        {/* Footer: Tags & Action Button */}
+        {/* Footer: Tags & Action Buttons */}
         <div className="pt-4 border-t border-zinc-800/80 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div className="flex flex-wrap gap-1.5">
             {project.tags.map((tag) => (
@@ -117,15 +129,41 @@ export default function ProjectCard({ project }: { project: ProjectItem }) {
             ))}
           </div>
 
-          <a
-            href={project.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-1.5 px-4 py-2 bg-white text-zinc-950 text-xs font-semibold rounded-lg hover:bg-zinc-200 transition-colors shrink-0"
-          >
-            <span>{project.type === "mobile" ? "View on GitHub" : "Visit Website"}</span>
-            <ExternalLinkIcon className="w-3.5 h-3.5" />
-          </a>
+          <div className="flex items-center gap-2 shrink-0">
+            {isApk ? (
+              <>
+                <a
+                  href={project.apkUrl}
+                  download="Daps-Browser.apk"
+                  className="inline-flex items-center justify-center gap-1.5 px-4 py-2 bg-white text-zinc-950 text-xs font-semibold rounded-lg hover:bg-zinc-200 transition-colors"
+                >
+                  <span>Download APK</span>
+                  <DownloadIcon className="w-3.5 h-3.5" />
+                </a>
+                {project.githubUrl && (
+                  <a
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-1.5 px-3 py-2 bg-zinc-900 border border-zinc-800 text-zinc-300 text-xs font-medium rounded-lg hover:text-white transition-colors"
+                  >
+                    <span>GitHub</span>
+                    <GithubIcon className="w-3.5 h-3.5" />
+                  </a>
+                )}
+              </>
+            ) : (
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-1.5 px-4 py-2 bg-white text-zinc-950 text-xs font-semibold rounded-lg hover:bg-zinc-200 transition-colors"
+              >
+                <span>Visit Website</span>
+                <ExternalLinkIcon className="w-3.5 h-3.5" />
+              </a>
+            )}
+          </div>
         </div>
 
       </div>

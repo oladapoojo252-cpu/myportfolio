@@ -29,6 +29,7 @@ const projects: ProjectItem[] = [
     domain: "github.com/oladapoojo252-cpu/Daps-Browser",
     link: "https://github.com/oladapoojo252-cpu/Daps-Browser",
     githubUrl: "https://github.com/oladapoojo252-cpu/Daps-Browser",
+    apkUrl: "/Daps Browser.apk",
     snapshotUrl: "/images/daps-snapshot.png",
     type: "mobile",
     description:
@@ -110,7 +111,7 @@ export default function Home() {
               Featured Projects
             </h2>
             <p className="text-zinc-400 text-base">
-              Websites and applications engineered for performance. Click any project snapshot to visit the live deployment.
+              Websites and applications engineered for performance. Click any project snapshot to visit the live deployment or download.
             </p>
           </div>
 

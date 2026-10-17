@@ -1,17 +1,8 @@
-"use client";
-
-import React, { useState } from "react";
-import { GithubIcon, XIcon, InstagramIcon, WhatsAppIcon, CheckIcon } from "./Icons";
+import React from "react";
+import { GithubIcon, XIcon, InstagramIcon, WhatsAppIcon, MailIcon } from "./Icons";
 
 export default function ContactSection() {
-  const [copied, setCopied] = useState(false);
   const email = "oladapoojo252@gmail.com";
-
-  const handleCopyEmail = () => {
-    navigator.clipboard.writeText(email);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
 
   return (
     <section id="contact" className="py-24 px-6 border-t border-zinc-800/80 text-center">
@@ -37,19 +28,13 @@ export default function ContactSection() {
             <span>Chat on WhatsApp</span>
           </a>
 
-          <button
-            onClick={handleCopyEmail}
+          <a
+            href={`mailto:${email}`}
             className="inline-flex items-center gap-2 px-7 py-3 bg-zinc-900 text-white font-medium rounded-full border border-zinc-700 hover:bg-zinc-800 transition-all text-sm"
           >
-            {copied ? (
-              <>
-                <CheckIcon className="w-4 h-4 text-emerald-400" />
-                <span>Email Copied!</span>
-              </>
-            ) : (
-              <span>Copy Email ({email})</span>
-            )}
-          </button>
+            <MailIcon className="w-4 h-4 text-zinc-400" />
+            <span>Send Email</span>
+          </a>
         </div>
 
         {/* Social Channels Strip */}
